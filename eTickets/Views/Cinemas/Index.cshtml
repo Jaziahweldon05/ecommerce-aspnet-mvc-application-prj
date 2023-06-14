@@ -1,0 +1,49 @@
+﻿@*Define the model or dataType that is going to be displayed in this file*@
+@*------- it is going to be a list of actors -------*@
+@model IEnumerable<Cinema>
+
+@*Define the ViewData*@
+@*--- bascally the data you want to have in your client side inorder to manipulate properties of the DOM ---*@
+
+@{
+    ViewData["Title"] = "List of Cinemas";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Logo)</th>
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.Description)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="align-middle">
+                            <img class="rounded-circle profPic" src="@item.Logo" alt="@item.Name" />
+                        </td>
+
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+
+                        <td class="align-middle">
+                            <a class="btn btn-outline-primary action-btn" title="Edit actor enrty"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btn btn-outline-info action-btn" title="View actor details"><i class="bi bi-eye"></i></a>
+                            <a class="btn btn-danger action-btn" title="Delete actor entry"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
