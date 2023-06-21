@@ -28,3 +28,11 @@ body {
 .action-btn{
     margin-bottom: 7px;
 }
+
+.MovieForm{
+    padding-right: 25px;
+}
+
+.nav-item {
+    list-style-type:none;
+}
