@@ -36,3 +36,9 @@ body {
 .nav-item {
     list-style-type:none;
 }
+
+.addNewActor{
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+}
